@@ -6,8 +6,9 @@ document.getElementById('login-btn').addEventListener('click', function () {
     const passwordField = document.getElementById('user-password');
     const userPassword = passwordField.value;
 
+    // cheak email and password
     if (userEmail == 'sontan@baap.com' && userPassword == 'secret') {
-        console.log('valid user')
+        window.location.href = 'banking.html'
     }
     else {
         console.log('invalid user')
