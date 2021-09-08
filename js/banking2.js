@@ -89,3 +89,27 @@ document.getElementById('deposit-button').addEventListener('click', function () 
 
 })
 
+// withdraw section js start Now 
+document.getElementById('withdraw-button').addEventListener('click', function () {
+    // console.log('clicked withdraw')
+    const withdrawInput = document.getElementById('withdraw-input');
+    const withdrawInputText = withdrawInput.value;
+    const withdrawAmount = parseFloat(withdrawInputText);
+    // console.log(withdrawAmount);
+
+    const withdrawTotal = document.getElementById('withdraw-total');
+    const withdrawTotalText = withdrawTotal.innerText;
+    const withdrawTotalAmount = parseFloat(withdrawTotalText);
+
+    withdrawTotal.innerText = withdrawTotalAmount + withdrawAmount;
+
+    // withdraw balance ubdate 
+    const withdrawBalanceTotal = document.getElementById('balance-total');
+    const withdrawBalanceTotalText = withdrawBalanceTotal.innerText;
+    const withdrawBalanceAmount = parseFloat(withdrawBalanceTotalText);
+
+    withdrawBalanceTotal.innerText = withdrawBalanceAmount - withdrawAmount;
+
+    //clear withdraw input text
+    withdrawInput.value = '';
+})
