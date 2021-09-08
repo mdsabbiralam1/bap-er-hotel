@@ -10,6 +10,8 @@ document.getElementById('deposit-button').addEventListener('click', function () 
     console.log(depositTotalText);
 }); */
 
+
+/* orginal
 document.getElementById('deposit-button').addEventListener('click', function () {
     const depositInput = document.getElementById('deposit-input');
 
@@ -59,3 +61,31 @@ document.getElementById('withdraw-button').addEventListener('click', function ()
 
     withdrawBalanceTotal.innerText = withdrawBalance - WithdrawAmount;
 })
+orginal Close */
+
+
+// Practise Part 
+document.getElementById('deposit-button').addEventListener('click', function () {
+    const depositInput = document.getElementById('deposit-input');
+    const depositCurentInputText = depositInput.value;
+    const depositAmount = parseFloat(depositCurentInputText);
+    // console.log(depositAmount);
+
+    const depositTotal = document.getElementById('deposit-total');
+    const depositTotalText = depositTotal.innerText;
+    const currentDepositTotal = parseFloat(depositTotalText);
+
+    depositTotal.innerText = depositAmount + currentDepositTotal;
+
+    // clear deposit input text
+    depositInput.value = '';
+
+    // balance ubdate
+    const balanceTotal = document.getElementById('balance-total');
+    const balanceTotalText = balanceTotal.innerText;
+    const balanceTotalAmount = parseFloat(balanceTotalText);
+
+    balanceTotal.innerText = depositAmount + balanceTotalAmount;
+
+})
+
