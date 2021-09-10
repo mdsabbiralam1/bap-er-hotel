@@ -1,3 +1,12 @@
+function doubleIt(num) {
+    const result = num * 2;
+    return result;
+}
+const first = doubleIt(5);
+const second = doubleIt(7);
+console.log(first);
+
+
 /*
 document.getElementById('deposit-button').addEventListener('click', function () {
     const depositInput = document.getElementById('deposit-input');
@@ -110,6 +119,6 @@ document.getElementById('withdraw-button').addEventListener('click', function ()
 
     withdrawBalanceTotal.innerText = withdrawBalanceAmount - withdrawAmount;
 
-    //clear withdraw input text
+    //clear withdraw input field
     withdrawInput.value = '';
 })
