@@ -1,3 +1,15 @@
+
+function doubleIt() {
+    const result = 5 * 2;
+    return result;
+}
+const rakibResult = doubleIt();
+console.log(rakibResult);
+
+
+
+
+/*
 function doubleIt(num) {
     const result = num * 2;
     return result;
@@ -7,6 +19,29 @@ const second = doubleIt(7);
 console.log(first);
 
 
+function doubleIt(num) {
+    const result = num * 3;
+    return result
+}
+const first = doubleIt(5);
+console.log(first);
+
+function forth(num) {
+    const result = num * 4;
+    return result;
+}
+const sabbir = forth(10);
+console.log(sabbir); 
+*/
+function getInputValue(inputid) {
+    const inputField = document.getElementById(inputid);
+    const inputAmountText = inputField.value;
+    const amountValue = parseFloat(inputAmountText);
+
+    // clear deposit input text
+    inputField.value = '';
+    return amountValue;
+}
 /*
 document.getElementById('deposit-button').addEventListener('click', function () {
     const depositInput = document.getElementById('deposit-input');
@@ -75,10 +110,10 @@ orginal Close */
 
 // Practise Part 
 document.getElementById('deposit-button').addEventListener('click', function () {
-    const depositInput = document.getElementById('deposit-input');
+    /* const depositInput = document.getElementById('deposit-input');
     const depositCurentInputText = depositInput.value;
-    const depositAmount = parseFloat(depositCurentInputText);
-    // console.log(depositAmount);
+    const depositAmount = parseFloat(depositCurentInputText); */
+    const depositAmount = getInputValue('deposit-input');
 
     const depositTotal = document.getElementById('deposit-total');
     const depositTotalText = depositTotal.innerText;
@@ -86,8 +121,7 @@ document.getElementById('deposit-button').addEventListener('click', function () 
 
     depositTotal.innerText = depositAmount + currentDepositTotal;
 
-    // clear deposit input text
-    depositInput.value = '';
+
 
     // balance ubdate
     const balanceTotal = document.getElementById('balance-total');
@@ -100,11 +134,12 @@ document.getElementById('deposit-button').addEventListener('click', function () 
 
 // withdraw section js start Now 
 document.getElementById('withdraw-button').addEventListener('click', function () {
-    // console.log('clicked withdraw')
+    /*
     const withdrawInput = document.getElementById('withdraw-input');
     const withdrawInputText = withdrawInput.value;
-    const withdrawAmount = parseFloat(withdrawInputText);
-    // console.log(withdrawAmount);
+    const withdrawAmount = parseFloat(withdrawInputText); */
+    const withdrawAmount = getInputValue('withdraw-input');
+
 
     const withdrawTotal = document.getElementById('withdraw-total');
     const withdrawTotalText = withdrawTotal.innerText;
@@ -119,6 +154,5 @@ document.getElementById('withdraw-button').addEventListener('click', function ()
 
     withdrawBalanceTotal.innerText = withdrawBalanceAmount - withdrawAmount;
 
-    //clear withdraw input field
-    withdrawInput.value = '';
+
 })
